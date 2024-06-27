@@ -24,5 +24,7 @@ export class GameOver extends Scene
             this.scene.start('MainMenu');
 
         });
+
+        console.log('GameOver');
     }
 }
