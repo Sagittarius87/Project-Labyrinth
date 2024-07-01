@@ -14,13 +14,14 @@ export class MainMenu extends Scene
 
         //this.add.image(512, 300, 'logo');
 
-        this.add.text(512, 200, 'Лабиринт', {
-            fontFamily: 'Arial Black', fontSize: 68, color: '#ffffff',
-            align: 'center'
-        }).setOrigin(0.5);
+        this.add.text(512, 200, 'Лабиринт', { fontFamily: 'Arial Black', fontSize: 68, color: '#ffffff', align: 'center' }).setOrigin(0.5);
 
         const buttonNewGame = new ButtonNewGame(this, 512, 384);
         this.add.existing(buttonNewGame);
+        buttonNewGame.setInteractive().on(Phaser.Input.Events.GAMEOBJECT_POINTER_UP, () => {
+            this.scene.start('Game');
+        });
+
         const buttonExitGame = new ButtonExitGame(this, 512, 384 + 64);
         this.add.existing(buttonExitGame)
 
