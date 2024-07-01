@@ -1,4 +1,5 @@
 import { Scene } from 'phaser';
+import { ButtonExitGame, ButtonNewGame, ButtonSettingsGame, ContinueGame, MainMenuButtons } from './MainMenuButtons';
 
 export class MainMenu extends Scene
 {
@@ -17,6 +18,11 @@ export class MainMenu extends Scene
             fontFamily: 'Arial Black', fontSize: 68, color: '#ffffff',
             align: 'center'
         }).setOrigin(0.5);
+
+        const buttonNewGame = new ButtonNewGame(this, 512, 384);
+        this.add.existing(buttonNewGame);
+        const buttonExitGame = new ButtonExitGame(this, 512, 384 + 64);
+        this.add.existing(buttonExitGame)
 
         console.log('MainMenu');
     }
